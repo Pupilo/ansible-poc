@@ -1,0 +1,11 @@
+---
+# vars file for criando-awx
+instance_type: t2.medium
+sec_group_name: manager
+image: ami-0b418580298265d5c
+keypair: ubuntu
+region: eu-central-1
+count: 1
+aws_profile: default
+vpcid: vpc-AAAAAAAA
+vpc_subnet_id: subnet-BBBBBB

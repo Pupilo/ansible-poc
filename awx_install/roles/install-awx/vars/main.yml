@@ -1,0 +1,8 @@
+---
+# vars file for install-awx
+SECRET_KEY: ce24a307d6041517c460c35cc831c7d97e6b3ba3303c47ba4a92aba0813488e0e79b00f4c883cb18ebb3655c734814a66bcd5867e3c0fe6e0aca9b32fa3bd29b
+ADMIN_PASSWORD: yourpassword
+AWX_WEB_HOSTNAME: awx
+POSTGRES_DATA_DIR: /var/awx/pgdocker
+DOCKER_COMPOSE_DIR: /var/awx/awxcompose
+PG_PASSWORD: axwpass

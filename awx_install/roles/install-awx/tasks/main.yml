@@ -1,0 +1,3 @@
+---
+# tasks file for install-awx
+- include: install-awx.yml

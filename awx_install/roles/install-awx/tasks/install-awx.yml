@@ -1,0 +1,48 @@
+- name: Adicionando key
+  shell: apt-add-repository --yes --update ppa:ansible/ansible && apt update
+
+- name: Instalando o Docker
+  shell: curl -fsSL https://get.docker.com | bash
+
+- name: Instalando os pacotes
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - ansible
+    - python3-pip
+    - npm
+    - nodejs
+  register: packages
+
+- name: Instalando dependencias npm
+  shell: npm install npm --global
+  register: npm_install
+
+- name: Instalando pre requisitos python do awx
+  pip:
+    name: "{{ pippackages }}"
+  vars:
+    pippackages:
+    - docker-compose==1.9.0
+    - docker-py
+  register: pip_packages
+
+- name: Git clone AWX
+  git:
+    repo: 'https://github.com/ansible/awx.git'
+    dest: /home/ubuntu/awx
+  register: git_clone
+
+- name: Copiando o arquivo inventory
+  template: 
+    src: inventory 
+    dest: /home/ubuntu/awx/installer/
+    owner: root
+    group: root
+    mode: '0644'
+  register: copy_inventory
+
+- name: Instalando o AWX
+  shell: cd /home/ubuntu/awx/installer/ && ansible-playbook -i inventory install.yml
+  register: install_awx
