@@ -1,0 +1,3 @@
+---
+# tasks file for criando_instantcias
+- include: provisioning.yml

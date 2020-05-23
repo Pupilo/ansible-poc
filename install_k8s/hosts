@@ -1,0 +1,9 @@
+[k8s-master]
+IP_PUBLICO
+
+[k8s-workers]
+IP_PUBLICO
+
+[k8s-workers:vars]
+K8S_MASTER_NODE_IP=IP_PRIVADO
+K8S_API_SECURE_PORTS=6443

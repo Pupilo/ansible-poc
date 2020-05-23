@@ -1,0 +1,11 @@
+---
+# vars file for criando_instantcias
+instance_type: t2.medium
+sec_group_name: k8sg
+image: ami-0b418580298265d5c
+keypair: ubuntu
+region: eu-central-1
+count: 3
+aws_profile: default
+vpcid: vpc-00000000000000000
+vpc_subnet_id: subnet-00000000000000000
