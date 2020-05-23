@@ -22,7 +22,7 @@ ansible-playbook -i hosts main.yml --key-file /path/yourkey
 cd provisioning
 ansible-playbook -i hosts main.yml
 cd ../install_k8s
-#Edite o arquivo host como os ips das instancias criadas.
+#Edite o arquivo hosts como os ips das instancias criadas.
 ansible-playbook -i hosts main.yml --key-file /path/yourkey
 ```
 
